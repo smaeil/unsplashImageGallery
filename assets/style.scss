@@ -1,0 +1,497 @@
+// Base Settings **********************************************************************************
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+// loading fonts **********************************************************************************
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('./fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+}
+
+
+
+// Body properties ********************************************************************************
+
+body {
+    font-family: 'Nunito',Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+// Some Quick classes *****************************************************************************
+
+.ib { display: inline-block !important;}
+.b { display: block;}
+.flex-center {display: flex; justify-content: center; align-items: center; padding:0 !important}
+.flex-space {display: flex; justify-content: space-between; align-items: center; width: 100%;}
+.show-b { display: block !important; transition: 0.5s ease;}
+
+
+
+// classes Exclusive for Pictures ****************************************************************
+
+.micro-thumb {
+    width: 100%;
+}
+
+
+
+
+
+
+
+// dropdwon classes *******************************************************************************
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 10rem;
+    padding: 1rem 0;
+    transition: 0.5s ease;
+    border-radius: 0.2rem;
+    a { 
+        display: block; 
+        width: 100%; 
+        margin: 0 !important; 
+        padding: 0 !important;
+        height: 2.5rem !important;
+        &:hover {
+            border: none !important;
+        }
+    }
+    p {
+        padding: 0.5rem 2rem;
+        margin: 0 !important;
+        height: 2.5rem;
+        transition: 0.3s ease;
+        &:hover { padding: 0.5rem 0 0.5rem 2.5rem;}
+    }
+}
+
+.dropdown {
+    height: 4rem;
+    a {
+        display: inline-block;
+        height: 4rem;
+        padding-top: 1.3rem;
+    }
+}
+
+
+
+// Variables **************************************************************************************
+
+$menu-m: 0 0.9rem;
+$menu-font: 1.2rem;
+$menu-p: 1.2rem 0.9rem;
+
+
+
+
+
+
+// Keyframes and Animations ***********************************************************************
+
+@keyframes flashing {
+    0%   {opacity: 0;}
+    20%  {opacity: 1;}
+    85%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+
+
+
+// Navbar *****************************************************************************************
+
+nav {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    padding: 0rem 1.5rem;
+    img { width: 2rem; display: inline-block; margin-right: 0.3rem;}
+    a { 
+        display: inline-block; 
+        text-decoration: none; 
+        font-size: $menu-font; 
+        padding: $menu-p;
+        height: 4rem;
+    }
+    p {font-size: $menu-font; cursor: pointer;}
+
+    
+
+    .change-mode {
+        position: relative;
+        display: block;
+        height: 2rem;
+        width: 3.2rem;
+        margin-right: 1rem;
+
+        input[type="checkbox"] {
+            height: 0;
+            width: 0;
+            opacity: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            background-color: #c9c9c9;
+            box-shadow: inset -0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.7), inset 0.1rem -0.1rem 0.5rem rgba(255, 255, 255, 0.8);
+            height: 2rem;
+            width: 3.2rem;
+            border-radius: 1rem;
+            transition: 1s ease;
+            &::before {
+                position: absolute;
+                content: "";
+                height: 1.8rem;
+                width: 1.8rem;
+                box-shadow: inset 0.1rem -0.1rem 0.3rem rgba(0, 0, 0, 0.3), inset -0.1rem 0.1rem 0.3rem rgba(255, 255, 255, 0.8);
+                background: url('./icons/sun-solid.svg'), goldenrod;
+                background-size: 1.2rem;
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 50%;
+                margin: 0.1rem;
+                transition: 0.4s ease;
+            }
+        }
+
+        input[type="checkbox"]:checked + .slider {
+            background-color: #38d632;
+            &::before {
+                transform: translate(1.2rem) rotatey(180deg);
+                box-shadow: inset 0.1rem -0.1rem 0.3rem rgba(0, 0, 0, 0.3), inset -0.1rem 0.1rem 0.3rem rgba(255, 255, 255, 0.3);
+                background: url('./icons/moon-solid.svg'), rgb(0, 0, 0);
+                background-size: 1rem;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+    }
+}
+
+.nav-selected {
+    font-weight: bold !important;
+    * {
+        font-weight: bold !important;
+    }
+}
+
+
+// Main Section **********************************************************************************
+
+main {
+    margin: 3rem 3rem;
+    ul {
+        margin: 0.5rem 2rem;
+    }
+    h1, h2, h3, p {
+        margin: 1rem 0 0.5rem;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+    .thumbnails-container-small {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+        gap: 0.5rem ;
+        align-items: center;
+    }
+
+    .thumbnails-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        align-items: center;
+        gap: 2rem;
+    }
+
+    article {
+        a {
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
+            padding: 0.8rem 0.4rem;
+            transition: 0.5s ease;
+            h3 {
+                padding: 0; margin: 0;
+            }
+        }
+    }
+}
+
+
+
+
+// Viewer pane <dialog> **************************************************************************
+
+#viewer {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    //display properties:
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: auto;
+    transition: 1s ease;
+
+    #viewer-topbar {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 12;
+    }
+
+    .icon {
+        height: 2rem;
+        margin: 0.4rem 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .dropdown-btn {
+        &:hover {
+            border-bottom: none;
+        }
+    }
+
+    a {text-decoration: none;}
+
+    .viewer-btn {
+        position: fixed;
+        height: 20vh;
+        min-height: 14rem;
+        width: 6rem;
+        z-index: 10;
+        background-color: rgba(128, 128, 128, 0.4);
+        box-shadow: none;
+        border: none;
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        transition: 0.5s ease;
+        &:hover {
+            opacity: 1;
+        }
+        cursor: pointer;
+    }
+
+    $floater-bg: rgba(41, 41, 41, 0.6);
+
+    .floater {
+        background-color: $floater-bg;
+        margin: 0.2rem;
+        border-radius: 0.2rem;
+        opacity: 0.4;
+        transition: 0.5s ease;
+        &:hover {
+            backdrop-filter: blur(2px);
+            opacity: 1;
+        }
+    }
+
+    #viewed-img {
+        z-index: 0;
+        max-width: 100vw;
+        max-height: 100vh;
+        transform-origin: top left;
+        transition: 0.5s ease;
+    }
+
+
+}
+
+
+#filter-list {
+    min-height: 44rem;
+    width: 18rem;
+    background-color: rgba(34, 34, 34, 0.6);
+    backdrop-filter: blur(4px);
+    
+    position: absolute;
+    top: 5rem; left: 0;
+    z-index: 11;
+    transition: 0.5s ease;
+    transform-origin: left;
+
+    //intial transformed form in load out is 0;
+    transform: scaleX(0);
+
+    p {
+        margin-top: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    #filter-list-content {
+        width: 14rem;
+        transition: 0.3s ease; 
+        margin: 1rem auto;
+
+        display: none;
+    }
+
+
+    .filter-icon {
+        width: 4rem ;
+        height: 4rem;
+        border-radius: 50%;
+        margin-right: 1.2rem;
+        border: 0.3rem solid white;
+    }
+
+    $range-background: rgb(230, 230, 230);
+    $range-thumb: white;
+    $range-hover-thumb: orange;
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 0.3rem;
+        background: $range-background;
+        outline: none;
+        border: none;
+        margin-bottom: 1.4rem;
+        margin-top: 0.4rem;
+        opacity: 0.7;
+        &:hover { opacity: 1;}
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: $range-thumb; 
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.3s ease;
+        &:hover {
+            background-color: $range-hover-thumb;
+        }
+    }
+
+
+    input[type="range"]::-moz-range-thumb {
+        -moz-appearance: none;
+        appearance: none;
+        height: 1.5rem;
+        width: 1.5rem;
+        background-color: $range-thumb; 
+        cursor: pointer;
+        border-radius: 50%;
+        transition: 0.3s ease;
+        &:hover {
+            background-color: $range-hover-thumb;
+        }
+    }
+}
+
+
+
+
+// footer ****************************************************************************************
+
+footer {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+
+    p {
+        text-align: center;
+        margin: 0.5rem 1rem;
+    }
+    .note {
+        font-size: 0.6rem;
+        sup { font-size: 0.4rem;}
+    }
+    .intacked { white-space: nowrap; }
+
+    #seconds {
+        font-weight: bold;
+        animation: flashing 1s linear 0s infinite;
+    }
+
+    .scroll-spy-chamber {
+        height: 0.5rem;
+        width: 100%;
+    }
+
+    #scroll-spy {
+        margin-top: 0.1rem;
+        height: 0.4rem;
+        width: 0%;
+    }
+}
+
+
+// Defaults for display **************************************************************************
+
+#home { display: block;}
+#cat1 { display: none;}
+#cat2 { display: none;}
+#cat3 { display: none;}
+#about { display: none;}
+#viewer { display: none;}
+
+// media Queries for different devices ***********************************************************
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+    :root {font-size: 0.8rem;}
+    nav { padding: 0 0.1rem;}
+    #cat-item {display: none;}
+    #cat-menu {display: block;}
+}
+
+@media screen and (min-width: 401px) and (max-width: 580px) {
+    :root {font-size: 0.9rem;}
+    nav { padding: 0 0.3rem;}
+    #cat-item {display: none;}
+    #cat-menu {display: block;}
+}
+
+
+
+@media screen and (min-width: 581px) and (max-width: 1000px) {
+    #cat-item {display: block;}
+    #cat-menu {display: none;}
+    footer {
+        padding: 0 2rem;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+    nav { padding: 0 8vw;}
+    main { margin: 3rem 9vw;}
+    #cat-item {display: block;}
+    #cat-menu {display: none;}
+    footer {padding: 0 9vw;}
+}

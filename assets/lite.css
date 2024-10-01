@@ -1,0 +1,83 @@
+body {
+  background: linear-gradient(45deg, rgb(238, 238, 238), rgb(255, 255, 255));
+}
+
+h1, h2, h3, h4, h5, h6, p, li {
+  color: #000000;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid gray !important;
+}
+
+.micro-thumb {
+  border: 0.3rem solid white;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.micro-thumb:hover {
+  outline: 1px solid orangered;
+}
+
+.dropdown-content {
+  color: #000000;
+  background-color: white;
+  box-shadow: -0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5);
+  color: #000000;
+}
+.dropdown-content p {
+  color: #000000;
+}
+.dropdown-content p:hover {
+  background: linear-gradient(45deg, rgb(233, 233, 233), rgb(211, 211, 211));
+  box-shadow: inset 0.1rem -0.1rem 0.5rem white, inset -0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-btn:hover {
+  border-bottom: 0.6rem solid rgb(73, 73, 73);
+}
+
+.distinct-text {
+  color: maroon;
+}
+
+nav {
+  background: linear-gradient(0deg, rgb(243, 243, 243), rgb(201, 201, 201));
+  border-bottom: 1px solid gray;
+  box-shadow: -0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5);
+}
+nav a {
+  color: #000000 !important;
+}
+nav a:hover {
+  border-bottom: 0.6rem solid rgb(73, 73, 73);
+}
+nav p {
+  color: #000000;
+}
+
+.nav-selected {
+  border-bottom: 0.6rem solid rgb(73, 73, 73);
+}
+
+main article a {
+  color: #000000;
+}
+main article a:hover {
+  background: linear-gradient(45deg, rgb(233, 233, 233), rgb(211, 211, 211));
+  box-shadow: inset 0.1rem -0.1rem 0.5rem white, inset -0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+main article a h3 {
+  border-top: 1px solid gray;
+}
+
+footer {
+  background: linear-gradient(45deg, rgb(238, 238, 238), rgb(255, 255, 255));
+  box-shadow: -0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5);
+}
+footer #seconds {
+  color: rgb(241, 182, 182);
+}
+footer #scroll-spy {
+  background-color: rgb(231, 0, 0);
+}/*# sourceMappingURL=lite.css.map */

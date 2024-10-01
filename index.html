@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My Photo Gallery</title>
+        <meta name="description" content="A simple Photo Gallery webpage">
+        <meta name="author" content="Ismail Ahmadi">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="./assets/icons/aperture.png">
+        <link rel="stylesheet" href="./assets/style.css">
+        <link rel="stylesheet" href="./assets/lite.css" id="modes">
+    </head>
+    <body>
+        <!-- Navbar and all of its components -->
+        <nav>
+            <div class="flex-center">
+                <a href="#" onclick="pages('home')" class="nav-selected" id="nav-home" tabindex="1">
+                    <div class="flex-center" style="height: 1.4rem;">
+                        <img src="./assets/icons/aperture.png" alt="Site_icon">
+                        <p>Home</p>
+                    </div>
+                </a>
+                <div class="dropdown" id="cat-menu">
+                    <a href="#" onclick="dropdownToggle('cat-menu-itself')" class="dropdown-btn" tabindex="1">Catagories&#8964</a>
+                    <div class="dropdown-content" id="cat-menu-itself">
+
+                        <a href="#" onclick="pages('cat1')" tabindex="1">
+                            <p>Cat-1</p>
+                        </a>
+                        
+                        <a href="#" onclick="pages('cat2')" tabindex="1">
+                            <p>Cat-2</p>
+                        </a>
+                        
+                        <a href="#" onclick="pages('cat3')" tabindex="1">
+                            <p>Cat-3</p>
+                        </a>
+                        
+                    </div>
+                </div>
+                <div id="cat-item">
+                    <a href="#" onclick="pages('cat1')" id="nav-cat1" tabindex="1">Cat-1</a>
+                    <a href="#" onclick="pages('cat2')" id="nav-cat2" tabindex="1">Cat-2</a>
+                    <a href="#" onclick="pages('cat3')" id="nav-cat3" tabindex="1">Cat-3</a>
+                </div>
+            </div>
+            <div class="flex-center">
+                <a href="#" onclick="pages('about')" class="" id="nav-about" tabindex="1">About</a>
+                <label for="change-mode" class="change-mode">
+                    <input type="checkbox" name="change-mode" id="change-mode" onchange="changeMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- All pages within this webapp are inside main tag-->
+
+        <main>
+
+            <!-- Home: the landing page -->
+            <section id="home">
+
+                <h1>Welcome to my Photo Gallery</h1>
+                <p>Here you will be witnessing just a bunch of random pictures which are divided into 3 catagories. <br>
+                There is no any sence behind catagoriztion except the name nubmering of the pictures.</p>
+                <h3>Descripton of catagories</h3>
+                <ul>
+                    <li>Cat 1 is from <strong class="distinct-text">pic001.jpg</strong> upto <strong class="distinct-text">pic055.jpg</strong></li>
+                    <li>Cat 2 is from <strong class="distinct-text">pic056.jpg</strong> upto <strong class="distinct-text">pic110.jpg</strong></li>
+                    <li>Cat 3 is from <strong class="distinct-text">pic111.jpg</strong> upto <strong class="distinct-text">pic167.jpg</strong></li>
+                </ul>
+                <br>
+                <p>
+                    All catagories are accessible in this page. 
+                    you can scroll or use navigation links to catagories in top Navigation bar
+                </p>
+
+                <article>
+                    <a href="#" onclick="pages('cat1')" tabindex="1">
+                        <h3>Catagory One</h3>
+                    </a>
+                    <div class="thumbnails-container-small" id="tile-cat1">
+                    </div>
+                </article>
+
+                <article>
+                    <a href="#" onclick="pages('cat2')" tabindex="1">
+                        <h3>Catagory Two</h3>
+                    </a>
+                    <div class="thumbnails-container-small" id="tile-cat2">
+                    </div>
+                </article>
+
+                <article>
+                    <a href="#" onclick="pages('cat3')" tabindex="1">
+                        <h3>Catagory Three</h3>
+                    </a>
+                    <div class="thumbnails-container-small" id="tile-cat3">
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- Cat-1: the Catagory One -->
+            <section id="cat1">
+                <h2>Catagory One</h2>
+                <p>
+                    Cat 1 is from <strong class="distinct-text">pic001.jpg</strong> upto <strong class="distinct-text">pic055.jpg</strong>
+                </p>
+                <hr>
+                <br>
+                <div class="thumbnails-container" id="dis-cat1"></div>
+            </section>
+
+
+            <!-- Cat-2: the Catagory One -->
+            <section id="cat2">
+                <h2>Catagory Two</h2>
+                <p>
+                    Cat 2 is from <strong class="distinct-text">pic056.jpg</strong> upto <strong class="distinct-text">pic110.jpg</strong>
+                </p>
+                <hr>
+                <br>
+                <div class="thumbnails-container" id="dis-cat2"></div>
+            </section>
+
+
+            <!-- Cat-3: the Catagory One -->
+            <section id="cat3">
+                <h2>Catagory Three</h2>
+                <p>
+                    Cat 3 is from <strong class="distinct-text">pic111.jpg</strong> upto <strong class="distinct-text">pic167.jpg</strong>
+                </p>
+                <hr>
+                <br>
+                <div class="thumbnails-container" id="dis-cat3"></div>
+            </section>
+
+
+            <!-- About: the page with information -->
+            <section id="about">
+                <h1>About Photo Gallery (this Project)</h1>
+                <h2>The steps of implemention:</h2>
+                <p><b>Resources:</b> all images has been downloaded from <a href="https://unsplash.com" target="_blank">unsplash.com</a> website, and all pictures are free to download and use.
+                <br>The icon for favicon is from <a href="https://flaticon.com" target="_blank">flaticon.com</a>.
+                <br>The rest of the icons has been downloaded form <a href="https://fontawesome.com/">FontAwsome.com</a>.</p>
+
+                <p><b>Basic Styling:</b> The styling is implemented into and <u>"style"</u> tag at head of the hmtl document rather than having separated css file.</p>
+                <p><b>Darkmode:</b> The darkmode button uses a JavaScript funciton <u>"changemode()"</u> to change the inner content of another styling tag in the head of the document with the id of <u>"modes"</u>. It also changes the srouce for the icon image of <u>"Darkmode"</u> in order for changing of the icon.</p>
+                <p><b>Mimicking single page app:</b> In oreder to have all pages in one single html file, all the pages has been arrange into dinstinct <u>"div"</u> elements with distincted ids. And by hornesting the power of simple JavaScript functions the display property of targeted div switches from <u>none</u> to <u>block/flex</u>, and opposite for none targeted <u>divs</u></p>
+                <p><b>The images objects and populators:</b> There has been 3 catagories for picture considered, and each catagory has been defined as an <u>JavaScript Array</u> containing the name of each picture. The function of <u>"catDisplay(<i>picture catagory array, picture css class</i>)"</u> populates the dives with small thumbnails of the pictures</p>
+                <p><b>Picture Viewer:</b> When a picture's thumbnail is clicked the function of <u>"vOpen(<i>picture's name</i>)"</u> will be called with opens the <u>"viewer div"</u> and load selected image into the <u>viwer div</u> for display.
+                In <u>viewer div</u> there are option to zoom in and out, downloading the picture and applying some filter to the viewed picture.</p>
+                
+                <br><br><br>
+                
+                <h4>Address: Somestreet. BW, DE</h4>
+                <h4>Email: <a href="mailto:smaeil.ahmadi@yahoo.com">smXXXXXXXXXXXXX.ahmadi@yahoo.com</a></h4>
+                <h4>Phone: 017 1234 56789</h4>
+            </section>
+
+            
+
+        </main>
+
+
+        <!-- Viewer pane -->
+
+        <div id="viewer">
+            <div class="flex-space" id="viewer-topbar"> 
+                <div class="floater">
+                    <a href="#" class="flex-center filter-area" onclick="filterListToggle()">
+                        <img src="./assets/icons/ellipsis-vertical-solid.svg" alt="filters" class="icon">
+                        <p style="margin-right: 0.5rem;">Filters</p>
+
+                        
+                    </a>
+                    
+                </div>
+
+                <!-- Filter List  -->
+                
+                <div id="filter-list" class="">
+                    
+                    <div id="filter-list-content" class="filter-area">
+                        <a href="#" class="flex-center" style="width: 80%;" onclick="filterReset()">
+                            <img src="" alt="Reset" class="filter-icon" id="reset-img">
+                            <p style="font-size: 2rem;">Reset</p>
+                        </a>
+
+                        <!-- Filters -->
+
+                        <p>Grayscale : <span id="indicator-grayscale">0</span>%</p>
+                        <input type="range" name="filter-grayscale" id="filter-grayscale" min ="0" max="100" value="0" oninput="filterChanges('grayscale', this.value, 'indicator-grayscale')">
+                        
+                        <p>Sepia : <span id="indicator-sepia">0</span>%</p>
+                        <input type="range" name="filter-sepia" id="filter-sepia" min ="0" max="100" value="0" oninput="filterChanges('sepia', this.value, 'indicator-sepia')">
+                        
+                        <p>Invert : <span id="indicator-invert">0</span>%</p>
+                        <input type="range" name="filter-invert" id="filter-invert" min ="0" max="100" value="0" oninput="filterChanges('invert', this.value, 'indicator-invert')">
+                        
+                        <p>Saturate : <span id="indicator-saturate">100</span>%</p>
+                        <input type="range" name="filter-saturate" id="filter-saturate" min ="0" max="100" value="100" oninput="filterChanges('saturate', this.value, 'indicator-saturate')">
+                        
+                        <p>Hue Rotate : <span id="indicator-hue-rotate">0</span>&#176;</p>
+                        <input type="range" name="filter-hue-rotate" id="filter-hue-rotate" min ="0" max="360" value="0" oninput="filterChanges('hue-rotate', this.value, 'indicator-hue-rotate')">
+                        
+                        <p>Brightness : <span id="indicator-brightness">100</span>%</p>
+                        <input type="range" name="filter-brightness" id="filter-brightness" min ="0" max="300" value="100" oninput="filterChanges('brightness', this.value, 'indicator-brightness')">
+                        
+                        <p>Contrast : <span id="indicator-contrast">100</span>%</p>
+                        <input type="range" name="filter-contrast" id="filter-contrast" min ="0" max="300" value="100" oninput="filterChanges('contrast', this.value, 'indicator-contrast')">
+                        
+
+                    </div>
+                </div>
+
+                <div class="flex-center">
+                    <div class="flex-center floater">
+                        <a href="#" onclick="zoomOut()">
+                            <img src="./assets/icons/magnifying-glass-minus-solid.svg" alt="zoom-out" class="icon">
+                        </a>
+                        <a href="#" onclick="zoomReset()">
+                            <p>Reset</p>
+                        </a>
+                        <a href="#" onclick="zoomIn()">
+                            <img src="./assets/icons/magnifying-glass-plus-solid.svg" alt="zoom-out" class="icon">
+                        </a>
+                    </div>
+                    <div class="flex-center floater">
+                        <a href="#" onclick="downloadPicture()">
+                            <img src="./assets/icons/download-solid.svg" alt="download-image" class="icon">
+                        </a>
+                        <a href="#" onclick="closeViewer()">
+                            <img src="./assets/icons/circle-xmark-solid.svg" alt="close" style="height: 2.5rem; margin: 0.5rem 0.5rem 0.5rem 0.2rem;">
+                        </a>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <button class="viewer-btn" onclick="navigatePicture('prev')" style="left: 0;">
+                <img src="./assets/icons/chevron-right-solid.svg" alt="prev" class="icon" style="transform: rotate(180deg);">
+            </button>
+
+
+
+
+
+            <img src="" alt="" title="" id="viewed-img" loading="lazy">
+
+
+
+
+
+            
+
+            <button class="viewer-btn" onclick="navigatePicture('next')" style="right: 0;">
+                <img src="./assets/icons/chevron-right-solid.svg" alt="next" class="icon">
+            </button>
+
+        </div>
+
+        <!-- some simple space -->
+        <br><br><br><br><br><br><br><br>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <!-- scroll spy  -->
+
+            <div class="scroll-spy-chamber">
+                <div id="scroll-spy"></div>
+            </div>
+
+
+            <!-- Calendar, Center not , Clock -->
+
+            <div class="flex-space">
+                <p class="intacked">
+                    <span id="weeks">weekday</span>
+                    <span id="days">monthday</span>
+                    <span id="months">monthname</span>
+                    
+                </p>
+
+                <p class="note">
+                    Designed by Ismail Ahmadi on 10<sup>th</sup> December 2023, BW, DE
+                </p>
+
+                <p class="intacked">
+                    <span id="hours">00</span> : <span id="minutes">00</span> : <span id="seconds">00</span>
+                </p>
+            </div>
+        </footer>
+
+        
+        
+        <script src="./assets/main.js" async defer></script>
+    </body>
+</html>

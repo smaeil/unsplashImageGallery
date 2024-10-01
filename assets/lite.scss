@@ -1,0 +1,127 @@
+// Theme properties *********************************************************************************
+
+// colors:
+$primary: #000000;
+$secondary: gray;
+$third: rgb(73, 73, 73);
+$back: white;
+$shadow-color: rgba(0, 0, 0, 0.5);
+$border-color: gray;
+$background-body: white;
+$second-pulse: rgb(241, 182, 182);
+
+$scroll-spy: rgb(231, 0, 0);
+$distinct-text: maroon;
+$focous: orangered;
+
+
+// gradients :
+$hover-drop-gr: linear-gradient(45deg, rgb(233, 233, 233), rgb(211, 211, 211));
+$body-gr: linear-gradient(45deg, rgb(238, 238, 238), rgb(255, 255, 255));
+$brand-gr: linear-gradient(-45deg, rgb(247, 243, 222), rgb(223, 241, 223), #f3e5e2, #e8e0f7, rgb(218, 236, 245));
+$silvertone-gr: linear-gradient(0deg, rgb(243, 243, 243), rgb(201, 201, 201));
+
+
+
+// shadows:
+$outset-shadow: -0.1rem 0.1rem 1rem $shadow-color;
+$inset-shadow-button: inset 0.1rem -0.1rem 0.5rem white, inset -0.1rem 0.1rem 0.5rem $shadow-color;
+
+
+// borders:
+$hairline-border : 1px solid $secondary;
+$blockline-border : 0.6rem solid $third;
+
+
+
+
+
+
+// body ********************************************************************************************
+
+body {background: $body-gr;}
+h1, h2, h3, h4, h5, h6, p, li {color: $primary;}
+hr {border: none; border-bottom: $hairline-border !important;}
+
+
+// properties as Variables *************************************************************************
+
+$shadow: 0 0 2rem rgba(0, 0, 0, 0.9);
+
+
+// Image related Classes ***************************************************************************
+
+.micro-thumb {
+    border: 0.3rem solid $back;
+    box-shadow: 0 0 1rem $shadow-color;
+    &:hover { outline: 1px solid $focous;}
+}
+
+// Drop down *****************************************************************************************
+
+.dropdown-content {
+    color:$primary;
+    background-color: $background-body;
+    box-shadow: $outset-shadow;
+    color: $primary;
+    p {
+        color: $primary;
+        &:hover {
+            background: $hover-drop-gr;
+            box-shadow: $inset-shadow-button;
+        }
+    }
+    
+}
+
+.dropdown-btn {
+    &:hover {
+        border-bottom: $blockline-border;
+    }
+}
+
+.distinct-text {color: $distinct-text;}
+
+// nav *********************************************************************************************
+
+nav {
+    a {
+        color: $primary !important;
+        &:hover {
+            border-bottom: $blockline-border;
+        }
+    }
+    p {color: $primary}
+    background: $silvertone-gr;
+    border-bottom: $hairline-border;
+    box-shadow: $outset-shadow;
+}
+
+.nav-selected {
+    border-bottom: $blockline-border;
+}
+
+
+// main *******************************************************************************************
+
+main {
+    article {
+        a {
+            color: $primary;
+            &:hover {
+                background: $hover-drop-gr;
+                box-shadow: $inset-shadow-button;
+            }
+            h3 {border-top: $hairline-border;}
+        }
+    }
+}
+
+// footer *****************************************************************************************
+
+footer {
+    background: $body-gr;
+    box-shadow: $outset-shadow;
+    #seconds {color: $second-pulse;}
+    #scroll-spy {background-color: $scroll-spy;}
+}
